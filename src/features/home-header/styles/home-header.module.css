@@ -1,0 +1,24 @@
+.nav {
+    display: flex;
+    /* flex-direction: column; */
+    position: fixed;
+    right: 0;
+    padding-top: 13rem;
+    padding-right: 30rem;
+    gap: 20px;
+}
+
+.title {
+    font-size: 3.75rem;
+    font-weight: 700;
+    color: #BFAF8F;
+    transition: color 0.3s ease-in-out;
+}
+
+.title:hover {
+    color: #FFEABF;
+}
+
+.active {
+     color: #FFEABF;
+}

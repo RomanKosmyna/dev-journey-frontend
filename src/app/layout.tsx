@@ -1,19 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Overlock } from "next/font/google";
+import { Overlock } from "next/font/google";
+import HomeHeader from "@/features/home-header/components/home-header";
 import "../styles/globals.css";
-import Header from "@/features/header/components/header";
 
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
-
-const overlock  = Overlock({
+const overlock = Overlock({
   subsets: ["latin"],
   weight: "400"
 });
@@ -31,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${overlock.className} antialiased`}>
-        <Header />
+        <HomeHeader />
         {children}
       </body>
     </html>

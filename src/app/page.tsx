@@ -1,13 +1,28 @@
+"use client"
+
+import { Canvas } from '@react-three/fiber'
+import Robot from "@/components/robot/robot";
+import PageWrapper from "@/components/layouts/page-wrapper";
 import styles from "./page.module.css";
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
 
-      </main>
+  return (
+    <>
+      <PageWrapper>
+        <main className={styles.main}>
+          <div className={styles.canvas_wrapper}>
+            <Canvas>
+              <ambientLight intensity={Math.PI / 2} />
+              <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
+              <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
+              <Robot position={[-0.4, -2, 0]} rotation={[0, 0.4, 0]} scale={0.6} />
+            </Canvas>
+          </div>
+        </main>
+      </PageWrapper>
       <footer className={styles.footer}>
       </footer>
-    </div>
+    </>
   );
 }
