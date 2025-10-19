@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useContext } from "react";
+import { HomeContext } from "@/features/home/context/home-provider";
 
 type CSSModule = Record<string, string>;
 
@@ -11,10 +13,24 @@ type Props = {
 
 function HeaderNavigation({ styles }: Props) {
     const currentUrl = usePathname();
+    const { hoveredLink, setHoveredLink } = useContext(HomeContext);
+
+    const updateModelAnimation = (e) => {
+        const linkId = e.currentTarget.id;
+        setHoveredLink(linkId);
+        // console.log("hovered");
+    };
+
+    const endModelAnimation = () => {
+        setHoveredLink(null);
+    }
 
     return (
         <nav className={styles.nav}>
             <Link
+                id="home_nav_link"
+                onMouseEnter={updateModelAnimation}
+                onMouseLeave={endModelAnimation}
                 className={`${styles.title} ${currentUrl === "/" ? styles.active : ""}`}
                 href={"/"}
             >
