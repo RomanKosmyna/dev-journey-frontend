@@ -1,5 +1,8 @@
 .page_outer_wrapper {
     width: 100%;
     height: 100vh;
-    background: var(--m-background-color-black);
+    padding: 0 var(--m-padding-15);
+    display: flex;
+    justify-content: center;
+    /* background: var(--m-background-color-black); */
 }
