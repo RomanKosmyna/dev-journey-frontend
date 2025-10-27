@@ -1,10 +1,10 @@
-import HeaderNavigation from "@/components/header-navigation/header-navigation";
+// import HeaderNavigation from "@/components/header-navigation/header-navigation";
 import styles from "../styles/home-header.module.css";
 
 function HomeHeader() {
     return (
         <header>
-            <HeaderNavigation styles={styles} />
+            {/* <HeaderNavigation styles={styles} /> */}
         </header>
     );
 }
