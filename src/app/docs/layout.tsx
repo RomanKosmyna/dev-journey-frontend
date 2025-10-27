@@ -1,19 +1,17 @@
-import GeneralHeader from "@/components/general-header/general-header";
-import PageInnerWrapper from "@/components/layouts/page-inner-wrapper";
-import PageWrapper from "@/components/layouts/page-wrapper";
-import SideNavigation from "@/features/docs/components/side-navigation";
+import Header from "@/features/header/components/header";
 
 function DocsLayout({ children }: { children: React.ReactNode }) {
     return (
-        <section>
-            <GeneralHeader />
-            <PageWrapper>
-                <PageInnerWrapper>
-                    <SideNavigation />
-                    {children}
-                </PageInnerWrapper>
-            </PageWrapper>
-        </section>
+        <>
+            <Header />
+            <header></header>
+            <main>
+                <aside></aside>
+                {children}
+                <aside></aside>
+            </main>
+            <footer></footer>
+        </>
     );
 }
 
